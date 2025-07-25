@@ -36,6 +36,7 @@ const getHighestDiscount = async (req, res) => {
   try {
     const amount = parseFloat(req.query.amountToPay);
     const bankName = req.query.bankName;
+    const instrument = req.query.paymentInstrument?.toUpperCase();
 
     if (!amount || !bankName) {
       return res
@@ -43,8 +44,16 @@ const getHighestDiscount = async (req, res) => {
         .json({ message: "Missing amountToPay or bankName" });
     }
 
-    // Fetch offers with this bank
-    const offers = await Offer.find({ banks: bankName.toUpperCase() });
+    // Base query
+    const query = {
+      banks: bankName.toUpperCase(),
+    };
+
+    if (instrument) {
+      query.paymentInstruments = instrument;
+    }
+
+    const offers = await Offer.find(query);
 
     if (!offers.length) {
       return res.status(404).json({ highestDiscountAmount: 0 });
@@ -52,7 +61,6 @@ const getHighestDiscount = async (req, res) => {
 
     let highestDiscountAmount = 0;
 
-    // Simple rule-based discount: extract percentage from summary
     for (const offer of offers) {
       const match = offer.summary.match(/(\d+)%/);
       if (match) {
@@ -61,7 +69,6 @@ const getHighestDiscount = async (req, res) => {
         highestDiscountAmount = Math.max(highestDiscountAmount, discount);
       }
 
-      // Fallback: match ₹value flat discount
       const flatMatch = offer.summary.match(/₹\s?(\d+)/);
       if (flatMatch) {
         const flatDiscount = parseFloat(flatMatch[1]);
