@@ -1,6 +1,6 @@
 const Offer = require("../models/Offer");
 
-exports.saveOffers = async (req, res) => {
+const saveOffers = async (req, res) => {
   try {
     const flipkartData = req.body.flipkartOfferApiResponse;
     const offers = flipkartData?.offer_sections?.PBO?.offers || [];
@@ -31,4 +31,54 @@ exports.saveOffers = async (req, res) => {
     console.error(error);
     res.status(500).json({ message: "Something went wrong" });
   }
+};
+const getHighestDiscount = async (req, res) => {
+  try {
+    const amount = parseFloat(req.query.amountToPay);
+    const bankName = req.query.bankName;
+
+    if (!amount || !bankName) {
+      return res
+        .status(400)
+        .json({ message: "Missing amountToPay or bankName" });
+    }
+
+    // Fetch offers with this bank
+    const offers = await Offer.find({ banks: bankName.toUpperCase() });
+
+    if (!offers.length) {
+      return res.status(404).json({ highestDiscountAmount: 0 });
+    }
+
+    let highestDiscountAmount = 0;
+
+    // Simple rule-based discount: extract percentage from summary
+    for (const offer of offers) {
+      const match = offer.summary.match(/(\d+)%/);
+      if (match) {
+        const percentage = parseFloat(match[1]);
+        const discount = (percentage / 100) * amount;
+        highestDiscountAmount = Math.max(highestDiscountAmount, discount);
+      }
+
+      // Fallback: match ₹value flat discount
+      const flatMatch = offer.summary.match(/₹\s?(\d+)/);
+      if (flatMatch) {
+        const flatDiscount = parseFloat(flatMatch[1]);
+        highestDiscountAmount = Math.max(highestDiscountAmount, flatDiscount);
+      }
+    }
+
+    res
+      .status(200)
+      .json({ highestDiscountAmount: Math.round(highestDiscountAmount) });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+module.exports = {
+  saveOffers,
+  getHighestDiscount,
 };
