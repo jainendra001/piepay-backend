@@ -1,0 +1,52 @@
+{
+  "flipkartOfferApiResponse": {
+    "offer_sections": {
+      "PBO": {
+        "offers": [
+          {
+            "adjustment_type": "CASHBACK_ON_CARD",
+            "adjustment_id": "FPO250626172916JI4VZ",
+            "summary": "Flat ₹10 Cashback on Paytm UPI Trxns. Min Order Value ₹500. Valid once per Paytm account",
+            "contributors": {
+              "payment_instrument": [
+                "UPI_COLLECT",
+                "UPI_INTENT"
+              ],
+              "banks": [],
+              "emi_months": ["0"],
+              "card_networks": []
+            },
+            "display_tags": ["PAYMENT_OPTIONS"],
+            "image": "https://rukminim1.flixcart.com/www/64/64/promos/02/06/2022/a89d0cb0-9155-4545-bd47-c5c53c8d50b7.png"
+          },
+          {
+            "adjustment_type": "CASHBACK_ON_CARD",
+            "adjustment_id": "FPO250619134128USHPF",
+            "summary": "5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarter",
+            "contributors": {
+              "payment_instrument": ["CREDIT"],
+              "banks": ["FLIPKARTAXISBANK"],
+              "emi_months": ["0"],
+              "card_networks": []
+            },
+            "display_tags": ["PAYMENT_OPTIONS"],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg"
+          },
+          {
+            "adjustment_type": "CASHBACK_ON_CARD",
+            "adjustment_id": "FPO250619135528ZQIZW",
+            "summary": "5% cashback on Axis Bank Flipkart Debit Card up to ₹750",
+            "contributors": {
+              "payment_instrument": ["CREDIT"],
+              "banks": ["FLIPKARTAXISBANK"],
+              "emi_months": ["0"],
+              "card_networks": []
+            },
+            "display_tags": ["PAYMENT_OPTIONS"],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg"
+          }
+        ]
+      }
+    }
+  }
+}
