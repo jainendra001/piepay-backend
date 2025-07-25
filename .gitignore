@@ -1,0 +1,9 @@
+# Node.js
+node_modules/
+.env
+.env.local
+.DS_Store
+*.log
+
+# Optional - OS-specific
+Thumbs.db
