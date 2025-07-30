@@ -20,12 +20,53 @@
             "image": "https://rukminim1.flixcart.com/www/64/64/promos/02/06/2022/a89d0cb0-9155-4545-bd47-c5c53c8d50b7.png"
           },
           {
+            "adjustment_type": "INSTANT_DISCOUNT",
+            "adjustment_id": "FPO250626182451RYQC7",
+            "summary": "5% off up to ₹750 on IDFC FIRST Power Women Platinum and Signature DebitCards. Min Txn Value: ₹5,000",
+            "contributors": {
+              "payment_instrument": ["CREDIT"],
+              "banks": ["IDFC"],
+              "emi_months": ["0"],
+              "card_networks": []
+            },
+            "display_tags": ["PAYMENT_OPTIONS"],
+            "image": "https://rukminim1.flixcart.com/www/128/128/promos/01/09/2023/c00c8f1e-1ae7-49d1-b7e5-0e2df3d11ef7.png?q=100"
+          },
+          {
+            "adjustment_type": "INSTANT_DISCOUNT",
+            "adjustment_id": "FPO2507231814216PY8M",
+            "summary": "10% off up to ₹1000 on Axis Bank Credit Card EMI Txn. Min Txn Value  ₹7500",
+            "contributors": {
+              "payment_instrument": ["EMI_OPTIONS"],
+              "banks": ["AXIS"],
+              "emi_months": [
+                "3", "6", "9", "12", "18", "24", "36"
+              ],
+              "card_networks": []
+            },
+            "display_tags": ["PAYMENT_OPTIONS"],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg"
+          },
+          {
             "adjustment_type": "CASHBACK_ON_CARD",
             "adjustment_id": "FPO250619134128USHPF",
             "summary": "5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarter",
             "contributors": {
               "payment_instrument": ["CREDIT"],
               "banks": ["FLIPKARTAXISBANK"],
+              "emi_months": ["0"],
+              "card_networks": []
+            },
+            "display_tags": ["PAYMENT_OPTIONS"],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg"
+          },
+          {
+            "adjustment_type": "INSTANT_DISCOUNT",
+            "adjustment_id": "FPO250724164632NHAJP",
+            "summary": "10% off up to ₹1,250 on Axis Bank Credit Card Txn. Min Txn Value  ₹7500",
+            "contributors": {
+              "payment_instrument": ["CREDIT"],
+              "banks": ["AXIS"],
               "emi_months": ["0"],
               "card_networks": []
             },
@@ -40,6 +81,21 @@
               "payment_instrument": ["CREDIT"],
               "banks": ["FLIPKARTAXISBANK"],
               "emi_months": ["0"],
+              "card_networks": []
+            },
+            "display_tags": ["PAYMENT_OPTIONS"],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg"
+          },
+          {
+            "adjustment_type": "INSTANT_DISCOUNT",
+            "adjustment_id": "FPO2507231818534ZWOW",
+            "summary": "10% off up to ₹1000 on Axis Bank Credit Card EMI Txn. Min Txn Value  ₹7500",
+            "contributors": {
+              "payment_instrument": ["EMI_OPTIONS"],
+              "banks": ["FLIPKARTAXISBANK"],
+              "emi_months": [
+                "3", "6", "9", "12", "18", "24", "36"
+              ],
               "card_networks": []
             },
             "display_tags": ["PAYMENT_OPTIONS"],
